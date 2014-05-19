@@ -33,10 +33,11 @@ NSString* const cellReuseIdentifier = @"myCell";
 // Customize the appearance of table view cells.
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ALCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+  
 
     
-    
-    ALCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];\
     if (!cell) {
         [tableView registerNib:[UINib nibWithNibName:@"ALCustomCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
@@ -44,10 +45,21 @@ NSString* const cellReuseIdentifier = @"myCell";
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         
-        
-        [cell.cellImage setImage:[UIImage imageNamed:@"oval-button_21328847.jpg"]];
+        cell.cellLabel.text = @"Corgi";
+        [cell.cellImage setImage:[UIImage imageNamed:@"corgiIcon.gif"]];
+        UIImage *pawImage = [UIImage imageNamed:@"orangepaw.png"];
+        [cell.cellButton setBackgroundImage:pawImage forState:UIControlStateNormal];
     }
-
+//        UIImage *orangeBar = [UIImage imageNamed:@"orangeBar.png"];
+//        cell.backgroundView = orangeBar;
+        UIImage *cellImage = [UIImage imageNamed:@"orangeBar.png"];
+    UIImage *selecCellImage = [UIImage imageNamed:@"selectedOrangeBar.png"];
+        UIImageView *cellView = [[UIImageView alloc] initWithImage:cellImage];
+        cell.backgroundView = cellView;
+    UIImageView *selecCellView = [[UIImageView alloc] initWithImage:selecCellImage];
+    cell.selectedBackgroundView = selecCellView;
+    
+ [cell setBackgroundColor:[UIColor clearColor]];
     
     /////
     

@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *cellImage;
 @property (nonatomic, strong) IBOutlet UILabel *cellLabel;
+@property (nonatomic, strong) IBOutlet UIButton *cellButton;
 @end

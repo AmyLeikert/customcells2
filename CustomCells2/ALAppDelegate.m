@@ -18,7 +18,7 @@
     self.window.rootViewController = self.viewController;
     
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+  //  self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
