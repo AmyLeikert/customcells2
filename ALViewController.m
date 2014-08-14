@@ -12,32 +12,25 @@
 
 @end
 
-NSString* const cellReuseIdentifier = @"myCell";
+// NSString* const cellReuseIdentifier = @"myCell";
 
 @implementation ALViewController
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
-
+    return 2;
 }
-
-// Customize the number of rows in the table view.
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 5;
+    return 2;
 }
-
-// Customize the appearance of table view cells.
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ALCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
   
-
-    
     if (!cell) {
         [tableView registerNib:[UINib nibWithNibName:@"ALCustomCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
@@ -45,58 +38,75 @@ NSString* const cellReuseIdentifier = @"myCell";
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         
-        cell.cellLabel.text = @"Corgi";
+        cell.cellLabel.text = @"Pictures";
         [cell.cellImage setImage:[UIImage imageNamed:@"corgiIcon.gif"]];
-        UIImage *pawImage = [UIImage imageNamed:@"orangepaw.png"];
-        [cell.cellButton setBackgroundImage:pawImage forState:UIControlStateNormal];
+        }
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        cell.cellLabel.text = @"Videos";
+        [cell.cellImage setImage:[UIImage imageNamed:@"corgiIcon.gif"]];
     }
-//        UIImage *orangeBar = [UIImage imageNamed:@"orangeBar.png"];
-//        cell.backgroundView = orangeBar;
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        cell.cellLabel.text = @"Pictures";
+        [cell.cellImage setImage:[UIImage imageNamed:@"happyCatIcon.gif"]];
+    }
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        cell.cellLabel.text = @"Videos";
+        [cell.cellImage setImage:[UIImage imageNamed:@"happyCatIcon.gif"]];
+    }
         UIImage *cellImage = [UIImage imageNamed:@"orangeBar.png"];
     UIImage *selecCellImage = [UIImage imageNamed:@"selectedOrangeBar.png"];
         UIImageView *cellView = [[UIImageView alloc] initWithImage:cellImage];
+    
         cell.backgroundView = cellView;
+    
     UIImageView *selecCellView = [[UIImageView alloc] initWithImage:selecCellImage];
     cell.selectedBackgroundView = selecCellView;
     
  [cell setBackgroundColor:[UIColor clearColor]];
-    
-    /////
-    
-//    static NSString *CellIdentifier = @"Cell";
-//
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//
-//    if (cell == nil) {
-//
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-
-// }
-
-    // Set up the cell...
-
-//    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-//
-//    cell.textLabel.text = [NSString  stringWithFormat:@"Cell Row #%d", [indexPath row]];
-
     return cell;
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    // open a alert with an OK and cancel button
+   // NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
 
-    NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
+   // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
-
-    [alert show];
+  //  [alert show];
 
 
 }
 
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UILabel *myLabel = [[UILabel alloc] init];
+    myLabel.frame = CGRectMake(20, 3, 320, 20);
+    myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    
+    [myLabel setFont:[UIFont fontWithName:@"Marker Felt" size:20]];
+    [myLabel setTextColor:[UIColor whiteColor]];
+    
+    
+    UIView *headerView = [[UIView alloc] init];
+    [headerView addSubview:myLabel];
+    
+    return headerView;
+}
+
+
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0)
+        return @"Corgis";
+    if (section == 1)
+        return @"Scottish Folds";
+    return @"undefined";
+}
 
 
 
@@ -112,7 +122,7 @@ NSString* const cellReuseIdentifier = @"myCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *blah = [UIImage imageNamed:@"underwaterprincess.png"];
+    UIImage *blah = [UIImage imageNamed:@"Eleanora.jpg"];
     [self.bottomImage setImage:blah];
     // Do any additional setup after loading the view from its nib.
 }

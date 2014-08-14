@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24AC10C9192E5F4500CF7303 /* happyCatIcon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 24AC10C8192E5F4500CF7303 /* happyCatIcon.gif */; };
+		24AC10CB192E60E200CF7303 /* Eleanora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24AC10CA192E60E200CF7303 /* Eleanora.jpg */; };
 		24E38301192995BF00C71390 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E38300192995BF00C71390 /* Foundation.framework */; };
 		24E38303192995BF00C71390 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E38302192995BF00C71390 /* CoreGraphics.framework */; };
 		24E38305192995BF00C71390 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E38304192995BF00C71390 /* UIKit.framework */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24AC10C8192E5F4500CF7303 /* happyCatIcon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = happyCatIcon.gif; sourceTree = "<group>"; };
+		24AC10CA192E60E200CF7303 /* Eleanora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eleanora.jpg; sourceTree = "<group>"; };
 		24E382FD192995BF00C71390 /* CustomCells2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCells2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E38300192995BF00C71390 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24E38302192995BF00C71390 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24AC10CC192E647100CF7303 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				24AC10CA192E60E200CF7303 /* Eleanora.jpg */,
+				24E50092192A90620065BDFA /* selectedOrangeBar.png */,
+				24E50090192A8C1B0065BDFA /* orangeBar.png */,
+				24AC10C8192E5F4500CF7303 /* happyCatIcon.gif */,
+				24E3833919299A2900C71390 /* image001.png */,
+				24E5004419299DBD0065BDFA /* corgiIcon.gif */,
+				24E500481929A4AC0065BDFA /* oval-button_21328847.jpg */,
+				24E500461929A23D0065BDFA /* underwaterprincess.png */,
+				24E5008E192A7CE80065BDFA /* orangepaw.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		24E382F4192995BF00C71390 = {
 			isa = PBXGroup;
 			children = (
@@ -133,19 +153,12 @@
 			children = (
 				24E3832F192995CF00C71390 /* ALViewController.h */,
 				24E38330192995CF00C71390 /* ALViewController.m */,
-				24E50092192A90620065BDFA /* selectedOrangeBar.png */,
 				24E38331192995CF00C71390 /* ALViewController.xib */,
-				24E50090192A8C1B0065BDFA /* orangeBar.png */,
 				24E3830F192995BF00C71390 /* ALAppDelegate.h */,
 				24E38310192995BF00C71390 /* ALAppDelegate.m */,
 				24E383341929988400C71390 /* ALCustomCell.h */,
 				24E383351929988400C71390 /* ALCustomCell.m */,
 				24E383361929988400C71390 /* ALCustomCell.xib */,
-				24E3833919299A2900C71390 /* image001.png */,
-				24E5004419299DBD0065BDFA /* corgiIcon.gif */,
-				24E500481929A4AC0065BDFA /* oval-button_21328847.jpg */,
-				24E500461929A23D0065BDFA /* underwaterprincess.png */,
-				24E5008E192A7CE80065BDFA /* orangepaw.png */,
 				24E38312192995BF00C71390 /* Images.xcassets */,
 				24E38307192995BF00C71390 /* Supporting Files */,
 			);
@@ -155,6 +168,7 @@
 		24E38307192995BF00C71390 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24AC10CC192E647100CF7303 /* Images */,
 				24E38308192995BF00C71390 /* CustomCells2-Info.plist */,
 				24E38309192995BF00C71390 /* InfoPlist.strings */,
 				24E3830C192995BF00C71390 /* main.m */,
@@ -263,7 +277,9 @@
 				24E383381929988400C71390 /* ALCustomCell.xib in Resources */,
 				24E500491929A4AC0065BDFA /* oval-button_21328847.jpg in Resources */,
 				24E3833A19299A2900C71390 /* image001.png in Resources */,
+				24AC10CB192E60E200CF7303 /* Eleanora.jpg in Resources */,
 				24E38313192995BF00C71390 /* Images.xcassets in Resources */,
+				24AC10C9192E5F4500CF7303 /* happyCatIcon.gif in Resources */,
 				24E50091192A8C1B0065BDFA /* orangeBar.png in Resources */,
 				24E5008F192A7CE80065BDFA /* orangepaw.png in Resources */,
 				24E38333192995CF00C71390 /* ALViewController.xib in Resources */,
